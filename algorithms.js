@@ -73,9 +73,25 @@ var primeFactors = function (num) {
 	return deDupe(result);
 };
 
+var bubbleSort = function (arr) {
+	var swapped,
+		i,
+		temp;
 
-var bubbleSort = function () {
-	// TODO: Implement	
+	do {
+		swapped = false;
+
+		for (i = 1; i < arr.length; i++) {
+			if (arr[i - 1] > arr[i]) {
+				temp = arr[i - 1];
+				arr[i - 1] = arr[i];
+				arr[i] = temp;
+				swapped = true;
+			}
+		}
+	} while (swapped);
+
+	return arr;
 };
 
 var insertionSort = function () {
