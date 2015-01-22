@@ -94,11 +94,27 @@ var bubbleSort = function (arr) {
 	return arr;
 };
 
-var insertionSort = function () {
-	// TODO: Implement	
+var quickSort = function (arr) {
+	if (!arr.length) {
+		return [];
+	}
+
+	var left = [],
+		right = [],
+		pivot = arr[0];
+
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] < pivot) {
+			left.push(arr[i]);
+		} else {
+			right.push(arr[i]);
+		}
+	}
+
+	return quickSort(left).concat(pivot, quickSort(right));
 };
 
-var quickSort = function () {
+var insertionSort = function () {
 	// TODO: Implement	
 };
 
